@@ -10,14 +10,21 @@
  */
 
 /* Includes ------------------------------------------------------------------*/
+#include <iostream>
 #include "argv_parser.h"
 
 /**
  * Argument parsing start function
  */
-argv_err__e argv_parser__start(int argc, char** argvs)
+argv_err__e argv_parser__start(int argc, char** argvs, argvs_handler handler)
 {
-    //Unused variables warning
-    (void)argc;
-    (void)argvs;
+    std::cout << "The application has " << argc << " arguments:" << std::endl;
+
+    for(int cnt = 0; cnt < argc; cnt++)
+        std::cout << cnt + 1 << ": " << argvs[cnt] << std::endl;
+
+    if(handler)
+        handler(ARGV_ERR__OK, nullptr);
+
+    return ARGV_ERR__OK;
 }

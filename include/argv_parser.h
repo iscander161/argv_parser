@@ -22,6 +22,6 @@
  * @param argvs Array of arguments
  * @return argv_err__e Function execution result @ref argv_err__e
  */
-argv_err__e argv_parser__start(int argc, char** argvs);
+argv_err__e argv_parser__start(int argc, char** argvs, argvs_handler handler);
 
 #endif /* _ARGV_PARSER_H_ */

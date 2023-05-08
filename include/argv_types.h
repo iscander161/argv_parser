@@ -17,8 +17,10 @@
  * @brief Enumeration of parser errors
  */
 typedef enum{
-    ARGV_ERR__OK = 0x00,            /*!< Успешное выполнение */
-    ARGV_ERR__ERROR,                /*!< Ошибка выполнения */
+    ARGV_ERR__OK = 0x00,            /*!< Success */
+    ARGV_ERR__ERROR,                /*!< Error */
 }argv_err__e;
+
+typedef void(*argvs_handler)(argv_err__e event, void* ext_data);
 
 #endif /* _ARGV_TYPES_H_ */
